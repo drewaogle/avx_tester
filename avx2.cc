@@ -1,7 +1,10 @@
 #include <immintrin.h>
 #include <stdio.h>
+#include "handle_signal.h"
 
+ 
 int main() {
+  signal(SIGILL,on_signal);
    __m256i steps = _mm256_set_epi32(1, -1, 2, -2, 3, -3, 4, -4);
       /* Compute the difference between the two vectors */
   __m256i result = _mm256_abs_epi32( steps);
