@@ -1,10 +1,4 @@
 #!/bin/bash
-catch() {
-    echo "Caught."
-    exit 1
-}
-
-trap 'catch' ILL
 
 ./ill 2>/dev/null
 if [[ $? -eq 0 ]]; then
